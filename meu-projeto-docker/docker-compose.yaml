@@ -1,6 +1,6 @@
 version: '3.3'
 services:
   app:
-    build: ./app
+    image: ghcr.io/joseph-lins/meu-projeto:latest
     ports:
       - "8081:3000"
