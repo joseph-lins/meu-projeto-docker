@@ -25,16 +25,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      # Build da imagem
+      # Build da imagem (AJUSTADO para a pasta correta)
       - name: Build Docker image
         run: |
           docker build \
             -t ghcr.io/${{ github.repository_owner }}/meu-projeto:latest \
             -t ghcr.io/${{ github.repository_owner }}/meu-projeto:${{ github.sha }} \
-            .
+            meu-projeto-docker/
 
       # Push das imagens
       - name: Push images to GHCR
         run: |
           docker push ghcr.io/${{ github.repository_owner }}/meu-projeto:latest
-          docker push ghcr.io/${{ github.repository_owner }}/meu-projeto:${{ github.sha }}
+          docker pus
